@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'Home\IndexController@index');
+Route::get('admin/index', 'Admin\ManagerController@index');
+Route::get('admin/welcome', 'Admin\ManagerController@welcome');
+Route::post('admin/login', 'Admin\ManagerController@login');
+;
