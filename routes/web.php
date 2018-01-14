@@ -15,7 +15,11 @@
 //    return view('welcome');
 //});
 Route::get('/', 'Home\IndexController@index');
+
+
+
 Route::get('admin/index', 'Admin\ManagerController@index');
 Route::get('admin/welcome', 'Admin\ManagerController@welcome');
-Route::post('admin/login', 'Admin\ManagerController@login');
-;
+Route::get('admin/login', 'Admin\ManagerController@login');
+Route::get('admin/admin-list', 'Admin\ManagerController@admin_list');
+Route::get('admin/admin-add', 'Admin\ManagerController@admin_add');

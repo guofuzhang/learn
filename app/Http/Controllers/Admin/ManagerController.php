@@ -17,8 +17,21 @@ class ManagerController extends Controller
         return view('admin/welcome');
     }
 
+
     public function login()
     {
         return view('admin/login');
+    }
+
+
+
+    public function admin_list()
+    {
+        return view('admin/admin-list');
+    }
+
+    public function admin_add()
+    {
+        return view('admin/admin-add');
     }
 }
