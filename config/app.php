@@ -144,6 +144,8 @@ return [
 //        debugbar
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        \Stevenyangecho\UEditor\UEditorServiceProvider::class,
+
 
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,

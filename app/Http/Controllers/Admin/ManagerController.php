@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,8 +31,25 @@ class ManagerController extends Controller
         return view('admin/admin-list');
     }
 
-    public function admin_add()
+    public function admin_add(Request $request)
     {
-        return view('admin/admin-add');
+        if($request->isMethod('post')){
+//            var_dump($request->all());
+            $shuju=$request->all();
+//            var_dump( 0000000000000);die;
+            $shuju['password']=bcrypt($shuju['password']);
+
+            if(Manager::create($shuju)){
+                return ['success'=>true];
+            }else{
+                return ['success'=>false];
+            }
+//            echo 1111;
+        }else{
+//            echo 22222;die;
+            return view('admin/admin-add');
+        }
+
+
     }
 }
