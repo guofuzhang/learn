@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ManagerController extends Controller
 {
+    public  $model;
+
     public function index()
     {
         return view('admin/index');
@@ -28,25 +32,45 @@ class ManagerController extends Controller
 
     public function admin_list()
     {
-        return view('admin/admin-list');
+        $info=Manager::get();
+//        dd($info);
+
+        return view('admin/admin-list',['info'=>$info]);
     }
 
     public function admin_add(Request $request)
     {
         if($request->isMethod('post')){
-//            var_dump($request->all());
-            $shuju=$request->all();
-//            var_dump( 0000000000000);die;
-            $shuju['password']=bcrypt($shuju['password']);
+            $rules = [
+                'username'=>'required|unique:manager,username|min:4|max:12',
+                'password'=>'required|confirmed',
 
-            if(Manager::create($shuju)){
+            ];
+            //② 制作错误提示
+            $notices = [
+                'username.required' =>'用户名必须填写',
+                'username.unique' =>'用户名被占用',
+                'username.min' =>'用户名长度不能小于4个字符',
+                'username.max' =>'用户名长度不能大于12个字符',
+                'password.required' => '密码必须填写',
+                'password.confirmed' => '两次输入密码必须一致',
+            ];
+
+            //③ 开始校验
+            $validator = Validator::make($request->all(),$rules,$notices);
+            if($validator->passes()){
+                $shuju=$request->all();
+                $shuju['password']=bcrypt($shuju['password']);
+                Manager::create($shuju);
                 return ['success'=>true];
             }else{
-                return ['success'=>false];
+                $errorinfo = collect($validator->messages())->implode('0','|');
+                return ['success'=>false,'errorinfo'=>$errorinfo];
+//                return ['success'=>false];
             }
-//            echo 1111;
+
+
         }else{
-//            echo 22222;die;
             return view('admin/admin-add');
         }
 

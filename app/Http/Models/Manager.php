@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Manager extends Model
 {
    protected  $table='manager';
-   protected $primaryKey='mg_id';
+   protected $primaryKey='id';
 
-   protected  $fillable=['username','password','mg_role_id','mg_sex','mg_phone','mg_remark'];
+   protected  $fillable=['username','password','mg_role_ids','mg_sex','mg_phone','mg_remark','mg_email'];
 }

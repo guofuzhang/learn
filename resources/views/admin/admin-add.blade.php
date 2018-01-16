@@ -50,7 +50,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="password" class="input-text" value="" placeholder="" id="mobile" name="password">
+				<input type="password" class="input-text" value="" placeholder="" id="mobile" name="password_confirmation">
 			</div>
 		</div>
 
@@ -75,13 +75,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="mobile" name="mobile">
+				<input type="text" class="input-text" value="" placeholder="" id="mobile" name="mg_phone">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" placeholder="@" name="email" id="email">
+				<input type="text" class="input-text" placeholder="@" name="mg_email" id="email">
 			</div>
 		</div>
 		{{--<div class="row cl">--}}
@@ -105,7 +105,7 @@
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">备注：</label>
-			<div id="container" name="content" type="text/plain" class="formControls col-xs-8 " style="height: 220px;width:550px;">
+			<div id="container" name="mg_remark" type="text/plain" class="formControls col-xs-8 " style="height: 220px;width:550px;">
 </div>
 		</div>
 		<div class="row cl">
@@ -154,9 +154,13 @@ $(function(){
 			url:'/admin/admin-add',
 			success:function (msg) {
 			    if(msg.success==true){
-                    alert(111);
+                   layer.alert('恭喜您添加成功',function () {
+					   window.parent.location.href=window.parent.location.href;
+					   layer.close();
+//					alert('添加成功')
+                   });
 				}else{
-                    alert(2222);
+                   layer.alert(msg.errorinfo,{icon:5});
 				}
 
             }
