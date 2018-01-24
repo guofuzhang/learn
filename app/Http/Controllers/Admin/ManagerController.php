@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,9 +24,26 @@ class ManagerController extends Controller
     }
 
 
-    public function login()
+    public function login(Request $request)
     {
-        return view('admin/login');
+
+        if($request->isMethod('post')){
+            $name=$_POST['username'];
+            $pwd=$_POST['password'];
+            $arr=array('username'=>$name,'password'=>$pwd);
+            $arr=array('username'=>$name,'password'=>$pwd);
+            $res=Auth::guard('admin')->attempt($arr);
+//            dd($name,$pwd,$res);
+//            die;
+//            dd($_POST);
+            if($res){
+                return redirect('admin/index');
+            }
+
+        }else{
+            return view('admin/login');
+        }
+
     }
 
 

@@ -20,7 +20,7 @@ Route::get('/', 'Home\IndexController@index');
 
 Route::get('admin/index', 'Admin\ManagerController@index');
 Route::get('admin/welcome', 'Admin\ManagerController@welcome');
-Route::get('admin/login', 'Admin\ManagerController@login');
+Route::match(['post','get'],'admin/login', 'Admin\ManagerController@login');
 Route::get('admin/admin-list', 'Admin\ManagerController@admin_list');
 Route::match(['post','get'],'admin/admin-add/', 'Admin\ManagerController@admin_add');
 Route::match(['post','get'],'admin/admin-edit/{manager}', 'Admin\ManagerController@admin_add');
