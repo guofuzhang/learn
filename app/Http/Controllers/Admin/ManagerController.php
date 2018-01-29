@@ -38,6 +38,10 @@ class ManagerController extends Controller
 //            dd($_POST);
             if($res){
                 return redirect('admin/index');
+            }else{
+                return redirect('admin/login')
+                    ->withErrors(array('用户名或密码错误'))
+                    ->withInput();
             }
 
         }else{

@@ -43,8 +43,10 @@
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
+
+          {{--<img src="http://test02.com/captcha/default?fdafde" alt="captcha">--}}
           <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src=""> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
+          <img src=" {{captcha_src()}}" class="my_captcha" onclick="this.src=this.src+Math.random()"> <a id="kanbuq"  href="javascript:void(0);" >看不清，换一张</a> </div>
       </div>
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
@@ -67,6 +69,16 @@
 <script type="text/javascript" src="/admin/static/h-ui/js/H-ui.min.js"></script>
 <!--此乃百度统计代码，请自行删除-->
 <script>
+  $("#kanbuq").click(function () {
+     var my_src= $(".my_captcha").attr("src");
+     var re_src=my_src+Math.random();
+//      console.log(re_src);
+      $(".my_captcha").attr('src',re_src);
+  });
+
+
+
+
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");

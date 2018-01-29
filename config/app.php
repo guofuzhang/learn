@@ -142,6 +142,10 @@ return [
          * Laravel Framework Service Providers...
          */
 //        debugbar
+
+            // ...
+        Mews\Captcha\CaptchaServiceProvider::class,
+
         Barryvdh\Debugbar\ServiceProvider::class,
 
         \Stevenyangecho\UEditor\UEditorServiceProvider::class,
@@ -197,7 +201,7 @@ return [
     */
 
     'aliases' => [
-
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 //        debugbar
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
