@@ -5,11 +5,17 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class ManagerAPIController extends Controller
 {
-    public function admin_list()
+    public function admin_list(Request $request)
     {
+        Session::put('name','xiaoming');
+        dd(Session::all());
+//        $user = Auth::user();
+//        dd($user);
 //        $info=DB::table('manager')->get();
 //        $info=DB::table('manager')->where('username','jack')->value('password');
 //        $info = DB::table('manager')->pluck('id,username');
@@ -20,9 +26,11 @@ class ManagerAPIController extends Controller
         $users = $query->addSelect('report_id_tmp')->get();
 
         $users = DB::table('public_project_report_tmp')->skip(1)->take(5)->get();
+        Log::info('Showing user profile for user: '.$users);
+
 //        var_dump($info);
-         $res=DB::table('public_project_report_tmp')->increment('report_id');
-        dd($res);
+//         $res=DB::table('public_project_report_tmp')->increment('report_id');
+        dd($users);
         foreach ($info as $a){
             echo $a;
         }
