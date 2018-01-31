@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ManagerController extends Controller
@@ -48,6 +49,15 @@ class ManagerController extends Controller
             return view('admin/login');
         }
 
+    }
+
+    public function send_email()
+    {
+        $data = ['email'=>'489668257@qq.com', 'name'=>'hehehheheh', 'uid'=>'123', 'activationcode'=>'4584108'];
+        Mail::send('admin/send_email', $data, function($message) use($data)
+        {
+            $message->to($data['email'], $data['name'])->subject('欢迎注册我们的网站，请激活您的账号！');
+        });
     }
 
 
