@@ -29,6 +29,8 @@ class ManagerController extends Controller
 
     public function get_sex()
     {
+        $auth=Auth::user();
+        dd($auth->name);
         $obj=new ManagerAPIController();
         $str=$obj->get_random_sex();
         dd($str);
