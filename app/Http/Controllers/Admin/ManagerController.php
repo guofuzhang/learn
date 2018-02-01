@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Api\ManagerAPIController;
 use App\Http\Models\Manager;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+ use Illuminate\Contracts\Pagination\Paginator;
 
 class ManagerController extends Controller
 {
@@ -25,16 +27,39 @@ class ManagerController extends Controller
     }
 
 
+    public function get_sex()
+    {
+        $obj=new ManagerAPIController();
+        $str=$obj->get_random_sex();
+        dd($str);
+    }
+
+
+
+
     public function login(Request $request)
     {
 
         if($request->isMethod('post')){
             $name=$_POST['username'];
             $pwd=$_POST['password'];
+            $rules = [
+                'captcha_code'=>'required|captcha'
+            ];
+//            定义验证错误提示：
+$messages = [
+    'captcha_code.required' => '验证码必填',
+    'captcha_code.captcha' => '验证码不正确',
+];
+//进行校验：
+//$res= $this -> validate($request,$rules,$messages);
+//dd($res);
             $arr=array('username'=>$name,'password'=>$pwd);
-            $arr=array('username'=>$name,'password'=>$pwd);
+//            dd($arr);
+
+
             $res=Auth::guard('admin')->attempt($arr);
-//            dd($name,$pwd,$res);
+            dd($name,$pwd,$res);
 //            die;
 //            dd($_POST);
             if($res){
@@ -62,9 +87,24 @@ class ManagerController extends Controller
 
 
 
-    public function admin_list()
+    public function admin_list(Request $request)
     {
-        $info=Manager::get();
+//        $where='';
+        if($request->isMethod('post')){
+//            dd(111);
+            $name=$_POST['username'];
+//            $where=array('username','like',$name);
+//            $where['username']=array('like',"%$name%");
+            $info = Manager::where('username','like',"%$name%")->paginate(15);
+
+//            $info=DB::table('manager')->where($where)->paginate(10);
+        }else{
+            $info=DB::table('manager')->paginate(10);
+        }
+//        $info=Manager::get()->paginate(8);;
+
+
+
 //        dd($info);
 
         return view('admin/admin-list',['info'=>$info]);
@@ -90,9 +130,12 @@ class ManagerController extends Controller
 
             //③ 开始校验
             $validator = Validator::make($request->all(),$rules,$notices);
+
             if($validator->passes()){
                 $shuju=$request->all();
                 $shuju['password']=bcrypt($shuju['password']);
+
+                dd($shuju);
                 Manager::create($shuju);
                 return ['success'=>true];
             }else{

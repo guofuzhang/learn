@@ -38,4 +38,22 @@ class ManagerAPIController extends Controller
 //        return response()->json(['status'=>1,'msg'=>'查询成功！','data'=>$info->toArray()]);
 //        return $info;
     }
+
+    public function get_random_sex()
+    {
+        $str='';
+        $number=rand(1,4);
+        if($number%2==0){
+            $str='女';
+        }else{
+            $str='男';
+        }
+        return $str;
+
+    }
+
+
+
+
+
 }

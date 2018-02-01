@@ -142,8 +142,8 @@ return [
          * Laravel Framework Service Providers...
          */
 //        debugbar
-
-            // ...
+        Laravel\Passport\PassportServiceProvider::class,
+        // ...
         Mews\Captcha\CaptchaServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,

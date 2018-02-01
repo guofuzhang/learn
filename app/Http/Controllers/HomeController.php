@@ -21,8 +21,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
+
+//        dd($_POST);
+//        if()
         return view('admin/index');
     }
 }
