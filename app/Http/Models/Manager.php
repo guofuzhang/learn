@@ -11,4 +11,10 @@ class Manager extends User
    protected $primaryKey='id';
 
    protected  $fillable=['username','password','mg_role_ids','mg_sex','mg_phone','mg_remark','mg_email'];
+
+
+    public function report()
+    {
+        return $this->hasOne('Report','','');
+   }
 }

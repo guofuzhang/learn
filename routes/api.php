@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/admin_list', 'Api\ManagerAPIController@admin_list');
+Route::get('/test', 'Api\ManagerAPIController@test');
 Route::get('/get_random_sex', 'Api\ManagerAPIController@get_random_sex');
