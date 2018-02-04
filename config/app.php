@@ -141,6 +141,8 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+
+        \zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 //        debugbar
         Laravel\Passport\PassportServiceProvider::class,
         // ...

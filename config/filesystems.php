@@ -63,6 +63,20 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'qiniu' => [
+            'driver' => 'qiniu',
+            'domains' => [
+                'default' => 'p3macoopy.bkt.clouddn.com', // 存储空间域名
+                'https' => 'dn-yourdomain.qbox.me', // 你的 HTTPS 域名
+                'custom' => 'static.abc.com', // 你的自定义域名
+            ],
+            'access_key'=> '0mLNGJjE5xJKBltEdXzALMXq4AKWTaow2xPhvV5C', //AccessKey
+            'secret_key'=> '_UeCsI3BJUiXSjw_kuDQK_KPPuWmsCC5poK4zRbE', //SecretKey
+            'bucket' => 'guofu-store', //Bucket 名字
+            'notify_url'=> '', // 持久化处理回调地址
+            'access' => 'public' // 空间访问控制 public 或 private
+        ],
+
     ],
 
 ];

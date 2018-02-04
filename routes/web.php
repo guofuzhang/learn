@@ -22,6 +22,10 @@ Route::get('admin/index', 'Admin\ManagerController@index')->middleware('auth');
 Route::get('admin/send_email', 'Admin\ManagerController@send_email');
 Route::get('admin/welcome', 'Admin\ManagerController@welcome');
 Route::match(['post','get'],'admin/login', 'Admin\ManagerController@login');
+
+Route::match(['post','get'],'stream/add', 'Admin\StreamController@add');
+
+
 Route::match(['get','post'],'admin/admin-list', 'Admin\ManagerController@admin_list');
 Route::match(['post','get'],'admin/admin-add/', 'Admin\ManagerController@admin_add');
 Route::match(['post','get'],'admin/admin-edit/{manager}', 'Admin\ManagerController@admin_add');
