@@ -146,6 +146,7 @@ class ComposerStaticInite6828b10a6d6fa260dcbbf9b5a393f10
         'A' => 
         array (
             'App\\' => 4,
+            'AetherUpload\\' => 13,
         ),
     );
 
@@ -396,6 +397,10 @@ class ComposerStaticInite6828b10a6d6fa260dcbbf9b5a393f10
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'AetherUpload\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -438,6 +443,17 @@ class ComposerStaticInite6828b10a6d6fa260dcbbf9b5a393f10
     );
 
     public static $classMap = array (
+        'AetherUpload\\AetherUploadServiceProvider' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/AetherUploadServiceProvider.php',
+        'AetherUpload\\ConfigMapper' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/ConfigMapper.php',
+        'AetherUpload\\Console\\BuildRedisHashesCommand' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Console/BuildRedisHashesCommand.php',
+        'AetherUpload\\Console\\CleanUpDirectoryCommand' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Console/CleanUpDirectoryCommand.php',
+        'AetherUpload\\Console\\CreateGroupDirectoryCommand' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Console/CreateGroupDirectoryCommand.php',
+        'AetherUpload\\Console\\PublishCommand' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Console/PublishCommand.php',
+        'AetherUpload\\Receiver' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Receiver.php',
+        'AetherUpload\\RedisHandler' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/RedisHandler.php',
+        'AetherUpload\\ResourceHandler' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/ResourceHandler.php',
+        'AetherUpload\\Responser' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/Responser.php',
+        'AetherUpload\\UploadHandler' => __DIR__ . '/..' . '/peinhu/aetherupload-laravel/src/UploadHandler.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\ManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ManagerController.php',
@@ -459,6 +475,8 @@ class ComposerStaticInite6828b10a6d6fa260dcbbf9b5a393f10
         'App\\Http\\Models\\Manager' => __DIR__ . '/../..' . '/app/Http/Models/Manager.php',
         'App\\Http\\Models\\Report' => __DIR__ . '/../..' . '/app/Http/Models/Report.php',
         'App\\Http\\Models\\Stream' => __DIR__ . '/../..' . '/app/Http/Models/Stream.php',
+        'App\\Http\\Models\\member' => __DIR__ . '/../..' . '/app/Http/Models/member.php',
+        'App\\Http\\Models\\member_type' => __DIR__ . '/../..' . '/app/Http/Models/member_type.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -4482,6 +4500,7 @@ class ComposerStaticInite6828b10a6d6fa260dcbbf9b5a393f10
         'Zend\\Diactoros\\Stream' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Stream.php',
         'Zend\\Diactoros\\UploadedFile' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/UploadedFile.php',
         'Zend\\Diactoros\\Uri' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Uri.php',
+        'member_type' => __DIR__ . '/../..' . '/database/seeds/member_type.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

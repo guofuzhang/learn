@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Models\Manager;
+use App\Http\Models\member;
+use App\Http\Models\member_type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -73,6 +75,23 @@ class ManagerAPIController extends Controller
 //        $queries = DB::getQueryLog();
 //        dd($queries);
 //        dd($res);
+
+//$info=member_type::paginate(5);
+//        DB::connection()->enableQueryLog(); // 开启查询日志
+//        $info=Manager::with('report')->paginate(5);
+        $info=member_type::with("get_type2");
+//        $queries = DB::getQueryLog();
+        dd($info);die;
+//        dd($info);die;
+
+        $info=Manager::with('report')->paginate(5);
+        foreach ($info as $v){
+            echo($v->report->report_content)."<br>";
+        }
+        die;
+//        dd($info);die;
+
+
         $info=DB::table('manager')->paginate(10);
         DB::connection()->enableQueryLog(); // 开启查询日志
         $res=Manager::limit(10)->get();

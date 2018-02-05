@@ -5,6 +5,7 @@ namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 
+
 class Manager extends User
 {
    protected  $table='manager';
@@ -15,6 +16,6 @@ class Manager extends User
 
     public function report()
     {
-        return $this->hasOne('Report','','');
+        return $this->hasOne(Report::class,'report_id','id');
    }
 }

@@ -140,8 +140,9 @@ return [
 
         /*
          * Laravel Framework Service Providers...
+         *
          */
-
+        AetherUpload\AetherUploadServiceProvider::class,
         \zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 //        debugbar
         Laravel\Passport\PassportServiceProvider::class,

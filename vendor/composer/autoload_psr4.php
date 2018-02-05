@@ -67,4 +67,5 @@ return array(
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'App\\' => array($baseDir . '/app'),
+    'AetherUpload\\' => array($vendorDir . '/peinhu/aetherupload-laravel/src'),
 );

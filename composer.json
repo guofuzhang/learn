@@ -13,6 +13,7 @@
         "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0",
         "mews/captcha": "^2.1",
+        "peinhu/aetherupload-laravel": "~1.0",
         "predis/predis": "^1.1",
         "stevenyangecho/laravel-u-editor": "~1.1",
         "zgldh/qiniu-laravel-storage": "^0.9.0"
