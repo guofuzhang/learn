@@ -14,4 +14,10 @@ class StreamController extends Controller
         $info=Stream::get();
         return view('admin/stream_list',$info);
     }
+
+    public function play()
+    {
+        $src='';
+        return view('admin/play');
+    }
 }

@@ -23,6 +23,10 @@ Route::get('admin/send_email', 'Admin\ManagerController@send_email');
 Route::get('admin/welcome', 'Admin\ManagerController@welcome');
 Route::match(['post','get'],'admin/login', 'Admin\ManagerController@login');
 
+
+//播放器路由地址
+Route::match(['post','get'],'admin/play', 'Admin\StreamController@play');
+
 Route::match(['post','get'],'stream/add', 'Admin\StreamController@add');
 
 
