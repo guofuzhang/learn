@@ -351,6 +351,54 @@
         ]
     },
     {
+        "name": "echobool/alipay-laravel5",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/echobool/alipay-laravel5.git",
+            "reference": "33c578cb4bce0835e9bb652b79f838daf13b5496"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/echobool/alipay-laravel5/33c578cb4bce0835e9bb652b79f838daf13b5496.zip",
+            "reference": "33c578cb4bce0835e9bb652b79f838daf13b5496",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "5.*",
+            "illuminate/support": "5.*",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-07-02T04:32:50+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "EchoBool\\AlipayLaravel\\": "src/EchoBool/AlipayLaravel/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "luojinyi",
+                "email": "40281612@qq.com"
+            }
+        ],
+        "keywords": [
+            "Alipay SDK",
+            "alipay",
+            "l5",
+            "laravel",
+            "laravel 5",
+            "支付宝",
+            "电脑网站支付"
+        ]
+    },
+    {
         "name": "egulias/email-validator",
         "version": "2.1.3",
         "version_normalized": "2.1.3.0",
@@ -3494,6 +3542,60 @@
             "guid",
             "identifier",
             "uuid"
+        ]
+    },
+    {
+        "name": "riverslei/payment",
+        "version": "v4.0.1",
+        "version_normalized": "4.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/helei112g/payment.git",
+            "reference": "e8b0fdd2566d75c82686737fd14856c1e3006b75"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/helei112g/payment/e8b0fdd2566d75c82686737fd14856c1e3006b75.zip",
+            "reference": "e8b0fdd2566d75c82686737fd14856c1e3006b75",
+            "shasum": ""
+        },
+        "require": {
+            "ext-bcmath": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "endroid/qrcode": "~1.9"
+        },
+        "time": "2017-07-05T15:13:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Payment\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "helei",
+                "email": "dayugog@gmail.com",
+                "homepage": "https://helei112g.github.io/categories/payment-3/"
+            }
+        ],
+        "description": "支付宝支付、微信支付、招商一网通支付php SDK。方便快速接入，最完整的开源支付 php sdk",
+        "homepage": "https://helei112g.github.io/categories/payment-3/",
+        "keywords": [
+            "alipay",
+            "weixin",
+            "一网通",
+            "微信支付",
+            "招商一网通",
+            "支付宝支付",
+            "集成支付接口SDK"
         ]
     },
     {

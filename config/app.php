@@ -142,6 +142,10 @@ return [
          * Laravel Framework Service Providers...
          *
          */
+
+
+//        支付宝
+        EchoBool\AlipayLaravel\AlipayServiceProvider::class,
         AetherUpload\AetherUploadServiceProvider::class,
         \zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 //        debugbar

@@ -64,8 +64,10 @@ class ManagerAPIController extends Controller
     }
 
 
-    public function test()
+    public function test(Request $request)
     {
+
+        dd($request);die;
 //        $res=DB::table('public_project_report_tmp')->select(DB::raw('count(*) as num,MAX(report_id),report_id_tmp'))->groupBy('report_id_tmp')->get();
 ////        $where=array();
 ////        $where['manager.id'];

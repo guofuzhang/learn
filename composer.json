@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "barryvdh/laravel-debugbar": "^3.1",
+        "echobool/alipay-laravel5": "dev-master",
         "fideloper/proxy": "~3.3",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",
@@ -15,6 +16,7 @@
         "mews/captcha": "^2.1",
         "peinhu/aetherupload-laravel": "~1.0",
         "predis/predis": "^1.1",
+        "riverslei/payment": "~4.0.0",
         "stevenyangecho/laravel-u-editor": "~1.1",
         "zgldh/qiniu-laravel-storage": "^0.9.0"
     },
@@ -62,4 +64,6 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
+
+
 }
