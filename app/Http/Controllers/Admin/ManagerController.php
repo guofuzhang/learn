@@ -53,15 +53,15 @@ class ManagerController extends Controller
         $out_trade_no = date('YmdHis') . '00045623';
 
         //订单名称，必填
-        $subject = '锁贸通任务ID448';
+        $subject = '给王总的年终奖';
         //付款金额，必填
-        $total_amount = 0.01;
+        $total_amount = 999;
         //商品描述，可空
-        $body = 'macbook pro2';
+        $body = '999元';
 
         $customData = json_encode(['model_name' => 'ewrwe', 'id' => 121]);//自定义参数
         $response = Alipay::tradePagePay($subject, $body, $out_trade_no, $total_amount, $customData);
-        dd($response);
+//        dd($response);
         //输出表单
         return $response['redirect_url'];
     }
