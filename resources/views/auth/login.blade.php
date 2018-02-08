@@ -45,7 +45,8 @@
                             <label for="email" class="col-md-4 control-label">验证码</label>
 
                             <div class="col-md-6">
-                                <input id="captcha" type="text" class="form-control" name="captcha" value="{{ old('captcha') }}" required autofocus><img
+                                <input id="captcha" type="text" class="form-control" name="captcha" value="{{ old('captcha') }}" required autofocus>
+                                <img
                                         src="{{captcha_src()}}" alt="" onclick="this.src=this.src+Math.random()">
 
                                 @if ($errors->has('captcha'))
