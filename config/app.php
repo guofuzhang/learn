@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -142,8 +142,9 @@ return [
          * Laravel Framework Service Providers...
          *
          */
-
-
+//表格
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Cyberduck\LaravelExcel\ExcelServiceProvider::class,
 //        支付宝
         EchoBool\AlipayLaravel\AlipayServiceProvider::class,
         AetherUpload\AetherUploadServiceProvider::class,

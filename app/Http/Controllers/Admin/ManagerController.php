@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Api\ManagerAPIController;
 use App\Http\Models\Manager;
+use App\Http\Models\member_type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,8 @@ class ManagerController extends Controller
 
     public function get_sex()
     {
+        $res=member_type::with('get_type')->limit(5);
+        dd($res);die;
         $auth=Auth::user();
         dd($auth->name);
         $obj=new ManagerAPIController();

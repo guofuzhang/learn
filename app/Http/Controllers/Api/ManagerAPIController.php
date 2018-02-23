@@ -10,9 +10,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
+use Flc\Dysms\Client;
+use Flc\Dysms\Request\SendSms;
+
+
 
 class ManagerAPIController extends Controller
 {
+    private $config = [
+        'accessKeyId'    => 'LTAIWtbuetWPS3Um',
+        'accessKeySecret' => 'k17BnwIXtkSN8MwarEwHc4MDXinyZG',
+    ];
     public function admin_list(Request $request)
     {
         Session::put('name','xiaoming');
@@ -66,8 +74,17 @@ class ManagerAPIController extends Controller
 
     public function test(Request $request)
     {
-
-        dd($request);die;
+        DB::connection()->enableQueryLog(); // 开启查询日志
+//        $res=member::paginate(5);
+        $users = DB::table('manager as a')
+            ->join('member as e', 'a.id', '=', 'e.member_id')
+            ->select('a.*', 'e.member_name')
+            ->get();
+        dd($users);
+//                $res=Manager::with('report')->paginate(5);
+//        dd($res);die;
+        $queries = DB::getQueryLog();
+        dd($queries);
 //        $res=DB::table('public_project_report_tmp')->select(DB::raw('count(*) as num,MAX(report_id),report_id_tmp'))->groupBy('report_id_tmp')->get();
 ////        $where=array();
 ////        $where['manager.id'];
@@ -124,6 +141,24 @@ GROUP BY t2.barCode
     }
 
 
+//    获取短信接口
 
+
+    public function get_sms()
+    {
+        $client  = new Client($this->config);
+        $sendSms = new SendSms;
+        $sendSms->setPhoneNumbers('15001262936');
+        $sendSms->setSignName('我是蜡笔小裁缝');
+        $sendSms->setTemplateCode('SMS_126235009');
+        $sendSms->setTemplateParam(['code' => rand(100000, 999999)]);
+        $sendSms->setOutId('demo');
+
+        print_r($client->execute($sendSms));
+
+
+
+
+    }
 
 }

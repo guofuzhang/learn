@@ -87,3 +87,5 @@ Route::any('captcha-test', function()
 
 
 Route::match(['post','get'],'admin/captcha', 'Admin\StreamController@captcha');
+
+Route::any('admin/test/test01','Admin\TestController@test01');

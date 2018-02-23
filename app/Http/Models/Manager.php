@@ -18,4 +18,9 @@ class Manager extends User
     {
         return $this->hasOne(Report::class,'report_id','id');
    }
+
+    public function member_info()
+    {
+        return $this->hasOne(member::class,'member_id','id');
+    }
 }
