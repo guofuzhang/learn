@@ -44,6 +44,9 @@ Route::post('/hello',function(){
 //播放器路由地址
 Route::match(['post','get'],'admin/play', 'Admin\StreamController@play');
 
+//图片上传功能
+Route::match(['post','get'],'admin/up_img', 'Admin\StreamController@up_img');
+
 Route::match(['post','get'],'stream/add', 'Admin\StreamController@add');
 
 

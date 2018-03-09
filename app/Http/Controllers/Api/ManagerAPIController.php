@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Models\Manager;
 use App\Http\Models\member;
 use App\Http\Models\member_type;
+use App\Services\OSS;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -160,5 +161,18 @@ GROUP BY t2.barCode
 
 
     }
+    
+    
+//    上传文件接口
+    public function up_img(Request $request)
+    {
+        OSS::publicUpload('bucket', '目标 object 名', '本地文件绝对路径', [
+            'ContentType' => 'application/pdf',
+]);
+        if(!empty($_POST)){ dd($_POST);}else{
+            dd(111);
+        }
+
+}
 
 }

@@ -5,6 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "johnlui/aliyun-oss": "~2.0",
         "php": ">=7.0.0",
         "barryvdh/laravel-debugbar": "^3.1",
         "cyber-duck/laravel-excel": "^1.2",
@@ -33,7 +34,8 @@
     "autoload": {
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/services"
         ],
         "psr-4": {
             "App\\": "app/"
